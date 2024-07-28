@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Chat Interface</title>
+</head>
+<body>
+    <div class="chat-header">
+        <div class="profile">
+            <img src="back.png" alt="Back" class="back-arrow">
+            <img src="pp.jpg" alt="Profile Picture" class="profile-pic">
+            <div>
+                <div class="name">User</div>
+                <div id="last-seen-time">Terakhir dilihat hari ini pukul 21.20</div>
+            </div>
+        </div>
+        <div class="icons">
+            <img src="call.png" alt="Call" class="icon call">
+            <img src="t3.png" alt="Menu" class="icon t3">
+        </div>
+    </div>
+    <div class="chat-body"></div>
+    <div class="chat-footer">
+        <div class="input-container">
+            <img src="emoji.png" alt="Emoji" class="icon emoji">
+            <input type="text" class="message-input" placeholder="Type a message">
+            <img src="file.png" alt="File" class="icon file">
+            <img src="camera.png" alt="Camera" class="icon camera">
+        </div>
+        <img src="vn.png" alt="Voice Note" class="icon voice-note send-button">
+    </div>
+    <div class="menu" id="menu">
+        <div class="menu-item" id="clear-chat">Hapus semua pesan</div>
+        <div class="menu-item" id="toggle-role1">Peran 1 (Saya)</div>
+        <div class="menu-item" id="toggle-role2">Peran 2 (Orang Lain)</div>
+    </div>
+    <div class="emoji-picker" id="emoji-picker"></div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,249 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body style */
+body {
+    font-family: Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji;
+    background-color: #e5ddd5;
+}
+
+/* Chat header style */
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2a2a2a; /* Dark gray background */
+    color: white;
+    padding: 5px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.back-arrow {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid #2a2a2a; /* Dark gray border */
+}
+
+.name {
+    font-size: 1.2em;
+}
+
+#last-seen-time {
+    font-size: 0.7em;
+    color: #999;
+    margin-top: 2px;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+/* Chat body style */
+.chat-body {
+    padding: 20px;
+    background: url('bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 60px); /* Adjust this value based on header height */
+    overflow-y: auto;
+    border-radius: 1px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-message {
+    background-color: #15573E;
+    color: white;
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 10px;
+    max-width: 80%;
+    position: relative;
+    align-self: flex-end;
+    display: inline-block;
+    z-index: 1; /* Ensure the message is above the arrow */
+}
+
+.chat-message span {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.chat-message.sent::after {
+    content: '';
+    position: absolute;
+    top: 33%;
+    right: -10px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-left-color: #15573E;
+    border-right: 0;
+    border-top: 0;
+    z-index: -1; /* Ensure the arrow is behind the message */
+}
+
+.chat-message.received::after {
+    content: '';
+    position: absolute;
+    top: 33%;
+    left: -10px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-right-color: #1F2C34;
+    border-left: 0;
+    border-top: 0;
+    z-index: -1; /* Ensure the arrow is behind the message */
+}
+
+/* Chat time */
+.chat-time {
+    display: inline-block;
+    font-size: 0.7em;
+    color: #999;
+    margin-top: 5px;
+    margin-left: 5px;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.chat-footer {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: none; /* Remove footer background */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: url('bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    background-color: #1F2C34;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.message-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 4px;
+    margin: 0 1px;
+    background-color: #1F2C34; /* Mengubah latar belakang input pesan */
+    color: rgb(255, 255, 255); /* Mengubah warna teks input pesan */
+    border-radius: 20px; /* Agar tetap konsisten dengan desain yang ada */
+}
+
+.icon {
+    width: 30px; /* Default size: 24px */
+    height: 30px;
+    cursor: pointer;
+    margin: 0 5px;
+    position: relative;
+}
+
+/* Custom sizes and positions for icons */
+.icon.emoji {
+    --icon-size: 10px;
+    --icon-margin-left: 5px;
+    --icon-margin-right: 5px;
+}
+
+.icon.file {
+    --icon-size: 24px;
+    --icon-margin-left: 5px;
+    --icon-margin-right: 5px;
+}
+
+.icon.camera {
+    --icon-size: 24px;
+    --icon-margin-left: 5px;
+    --icon-margin-right: 5px;
+}
+
+.icon.voice-note {
+    width: 50px; /* Adjust this value to change the icon size */
+    height: 50px; /* Adjust this value to change the icon size */
+    margin-left: 4px; /* Adjust this value to change the spacing */
+    margin-right: 15px; /* Adjust this value to change the spacing */
+    margin-top: 10px; /* Adjust this value to change the spacing */
+    margin-bottom: 10px; /* Adjust this value to change the spacing */
+    position: relative; /* Allows for additional positioning if needed */
+}
+
+.emoji-picker {
+    position: absolute;
+    bottom: 60px; /* Adjust based on the height of the footer */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 300px;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none; /* Initially hidden */
+}
+
+.emoji-picker span {
+    cursor: pointer;
+    font-size: 1.5em;
+    margin: 5px;
+}
+
+.menu {
+    position: absolute;
+    top: 60px; /* Adjust based on the height of the header */
+    right: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: none; /* Initially hidden */
+}
+
+.menu-item {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.chat-message.received {
+    align-self: flex-start;
+    background-color: #1F2C34;
+}
+
+.chat-message.received .chat-time {
+    color: #ddd;
+}
