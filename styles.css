@@ -76,7 +76,7 @@ body {
 }
 
 .chat-message {
-    background-color: #15573E;
+    background-color: #124D37;
     color: white;
     border-radius: 10px;
     padding: 5px;
@@ -94,6 +94,22 @@ body {
     margin-right: 5px;
 }
 
+/* Status icons */
+.status-icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 1px;
+    vertical-align: middle;
+    
+}
+.chat-message.sent .status-icon {
+    display: inline-block;
+}
+
+.chat-message.received .status-icon {
+    display: none; /* Hide status icon for received messages */
+}
+
 .chat-message.sent::after {
     content: '';
     position: absolute;
@@ -103,7 +119,7 @@ body {
     width: 0;
     height: 0;
     border: 20px solid transparent;
-    border-left-color: #15573E;
+    border-left-color: #124D37;
     border-right: 0;
     border-top: 0;
     z-index: -1; /* Ensure the arrow is behind the message */
@@ -128,7 +144,7 @@ body {
 .chat-time {
     display: inline-block;
     font-size: 0.7em;
-    color: #999;
+    color: #c3c2c2;
     margin-top: 5px;
     margin-left: 5px;
     vertical-align: middle;
@@ -245,5 +261,5 @@ body {
 }
 
 .chat-message.received .chat-time {
-    color: #ddd;
+    color: #c3c2c2;
 }
