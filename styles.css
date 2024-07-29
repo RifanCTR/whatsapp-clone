@@ -176,8 +176,8 @@ body {
     flex: 1;
     border: none;
     outline: none;
-    padding: 9px;
-    margin: 0 4px;
+    padding: 15px;
+    margin: 0 px;
     background-color: #1F2C34; /* Mengubah latar belakang input pesan */
     color: rgb(255, 255, 255); /* Mengubah warna teks input pesan */
     border-radius: 20px; /* Agar tetap konsisten dengan desain yang ada */
@@ -259,6 +259,11 @@ body {
     align-self: flex-start;
     background-color: #1F2C34;
 }
+
+.chat-message.received .chat-time {
+    color: #c3c2c2;
+}
+
 
 .chat-message.received .chat-time {
     color: #c3c2c2;
