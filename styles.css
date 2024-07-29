@@ -16,7 +16,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #2a2a2a; /* Dark gray background */
+    background-color: #302f2f; /* Dark gray background */
     color: white;
     padding: 5px;
 }
@@ -46,11 +46,9 @@ body {
 }
 
 #last-seen-time {
-    font-size: 0.7em;
-    color: #999;
-    margin-top: 2px;
+    font-size: 0.8em; /* Atur ukuran font sesuai kebutuhan */
+    color: #999; /* Sesuaikan warna teks jika diperlukan */
 }
-
 .icons {
     display: flex;
     align-items: center;
@@ -66,7 +64,7 @@ body {
 /* Chat body style */
 .chat-body {
     padding: 20px;
-    background: url('bg.jpg') no-repeat center center fixed;
+    background: url('bg6.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 60px); /* Adjust this value based on header height */
     overflow-y: auto;
@@ -159,7 +157,7 @@ body {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background: url('bg.jpg') no-repeat center center fixed;
+    background: url('bg6.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -269,9 +267,38 @@ body {
     color: #c3c2c2;
 }
 
+#last-seen-time {
+    font-size: 0.9em;
+    color: #999;
+}
 
+/* Chat body style */
+.chat-body {
+    padding: 20px;
+    background: url('bg6.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 60px); /* Adjust this value based on header height */
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+}
 
-.chat-message.received .chat-time {
-    color: #c3c2c2;
+.chat-message {
+    background-color: transparent; /* Make the background transparent */
+    padding: 0; /* Remove padding */
+    margin-bottom: 530px;
+    max-width: 100%; /* Ensure it takes full width of the container */
+    overflow: hidden; /* Hide overflow */
+    position: relative;
+}
+
+.description-img {
+    display: block;
+    width: 400px;
+    height: 60px;
+    background-image: url('deskripsi.png');
+    background-size: contain; /* Menyesuaikan ukuran gambar dengan kontainer */
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
