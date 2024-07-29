@@ -42,8 +42,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const now = new Date();
         timeElement.textContent = now.toTimeString().slice(0, 5);
 
+        const statusElement = document.createElement('img');
+        statusElement.classList.add('status-icon');
+        statusElement.src = 'c1a.png'; // Default status: belum dibaca
+
         messageElement.appendChild(textElement);
         messageElement.appendChild(timeElement);
+        messageElement.appendChild(statusElement);
         chatBody.appendChild(messageElement);
 
         messageInput.value = '';
@@ -51,6 +56,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Scroll to the bottom of the chat
         chatBody.scrollTop = chatBody.scrollHeight;
+
+        // Add event listener for status change
+        statusElement.addEventListener('click', () => {
+            changeMessageStatus(statusElement);
+        });
+    }
+
+    // Change message status function
+    function changeMessageStatus(statusElement) {
+        const statuses = ['c1a.png', 'c2a.png', 'c2.png'];
+        let currentStatusIndex = statuses.indexOf(statusElement.src.split('/').pop());
+
+        currentStatusIndex = (currentStatusIndex + 1) % statuses.length;
+        statusElement.src = statuses[currentStatusIndex];
     }
 
     // Send message on button click
@@ -126,4 +145,5 @@ document.addEventListener('DOMContentLoaded', () => {
     cameraIcon.addEventListener('click', () => {
         alert('Camera picker clicked!'); // Implement your camera picker logic here
     });
+    
 });
