@@ -5,11 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Chat Interface</title>
+    <style>
+        .camera-icon {
+            width: 30px; /* Adjust size as needed */
+            height: 30px;
+            cursor: pointer;
+        }
+        /* Hide the actual file input element */
+        .file-input {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <div class="chat-header">
         <div class="profile">
-            <img src="back.png" alt="Back" class="back-arrow">
+            <img src="back.png" alt="Back" class="back-arrow" onclick="goBack()">
+            <script>
+                function goBack() {
+                    window.location.href = 'back.html'; // Redirect to back.html
+                }
+            </script>
             <img src="pp4.jpg" alt="Profile Picture" class="profile-pic">
             <div>
                 <div class="name">IPAN</div>
@@ -31,7 +47,29 @@
             <img src="emoji.png" alt="Emoji" class="icon emoji">
             <input type="text" class="message-input" placeholder="Type a message">
             <img src="file.png" alt="File" class="icon file">
-            <img src="camera.png" alt="Camera" class="icon camera">
+    <!-- Input file tersembunyi untuk membuka kamera depan -->
+    <input type="file" id="cameraInput" class="file-input" accept="image/*" capture="user" onchange="handleFileSelect(event)">
+    
+    <!-- Gambar ikon kamera -->
+    <img src="camera.png" alt="Kamera" class="camera-icon" onclick="document.getElementById('cameraInput').click()">
+
+    <script>
+        function handleFileSelect(event) {
+            const file = event.target.files[0];
+            if (file) {
+                // Proses gambar yang diambil
+                console.log('Gambar yang diambil:', file);
+                
+                // Kamu bisa menampilkan gambar atau mengunggahnya, misalnya:
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    // Tampilkan URL data gambar
+                    console.log('URL Data Gambar:', e.target.result);
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
         </div>
         <img src="vn.png" alt="Voice Note" class="icon voice-note send-button">
     </div>
@@ -44,4 +82,5 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 
