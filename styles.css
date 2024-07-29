@@ -111,7 +111,7 @@ body {
 .chat-message.sent::after {
     content: '';
     position: absolute;
-    top: 33%;
+    top: 32%;
     right: -10px;
     transform: translateY(-50%);
     width: 0;
@@ -126,7 +126,7 @@ body {
 .chat-message.received::after {
     content: '';
     position: absolute;
-    top: 33%;
+    top: 32%;
     left: -10px;
     transform: translateY(-50%);
     width: 0;
@@ -271,34 +271,21 @@ body {
     font-size: 0.9em;
     color: #999;
 }
-
-/* Chat body style */
-.chat-body {
-    padding: 20px;
-    background: url('bg6.jpg') no-repeat center center fixed;
-    background-size: cover;
-    height: calc(100vh - 60px); /* Adjust this value based on header height */
-    display: flex;
-    align-items: center; /* Center items vertically */
-    justify-content: center; /* Center items horizontally */
-}
-
-.chat-message {
-    background-color: transparent; /* Make the background transparent */
-    padding: 0; /* Remove padding */
-    margin-bottom: 530px;
-    max-width: 100%; /* Ensure it takes full width of the container */
-    overflow: hidden; /* Hide overflow */
+.chat-me {
+    background-color: transparent;
+    padding: 0;
+    margin-bottom: 7px;
+    max-width: 100%; /* Ubah ini untuk memastikan gambar tidak melebihi kontainer */
+    overflow: hidden;
     position: relative;
 }
 
 .description-img {
     display: block;
-    width: 400px;
-    height: 60px;
+    width: 100%; /* Atur lebar gambar untuk mengikuti lebar kontainer */
+    height: auto; /* Menjaga rasio aspek gambar */
     background-image: url('deskripsi.png');
-    background-size: contain; /* Menyesuaikan ukuran gambar dengan kontainer */
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
-
