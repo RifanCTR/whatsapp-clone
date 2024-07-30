@@ -45,10 +45,6 @@ body {
     font-size: 1.2em;
 }
 
-#last-seen-time {
-    font-size: 0.8em; /* Atur ukuran font sesuai kebutuhan */
-    color: #999; /* Sesuaikan warna teks jika diperlukan */
-}
 .icons {
     display: flex;
     align-items: center;
@@ -268,7 +264,7 @@ body {
 }
 
 #last-seen-time {
-    font-size: 0.9em;
+    font-size: 0.7em;
     color: #999;
 }
 .chat-me {
@@ -289,3 +285,4 @@ body {
     background-repeat: no-repeat;
     background-position: center;
 }
+
