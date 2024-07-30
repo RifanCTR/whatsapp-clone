@@ -6,15 +6,49 @@
     <link rel="stylesheet" href="styles.css">
     <title>Chat Interface</title>
     <style>
-        .camera-icon {
-            width: 30px; /* Adjust size as needed */
+.input-container {
+            display: flex;
+            align-items: center;
+            gap: px; /* Jarak antar elemen */
+            position: relative;
+        }
+        .message-input {
+            flex: 1; /* Mengisi ruang yang tersedia */
+            min-width: 100px; /* Lebar minimum */
+            max-width: 100%; /* Lebar maksimum */
+            border: none;
+            outline: none;
+            padding: 10px;
+            background-color: #1F2C34;
+            color: rgb(255, 255, 255);
+            border-radius: 21px;
+        }
+        .camera-icon, .emoji-icon, .file-icon {
+            width: 30px; /* Default size: 24px */
             height: 30px;
             cursor: pointer;
-        }
-        /* Hide the actual file input element */
-        .file-input {
-            display: none;
-        }
+            margin: 0 8px;
+            position: relative;
+}
+/* Camera icon styles */
+.camera-icon {
+    width: 30px; /* Adjust size as needed */
+    height: 30px;
+    cursor: pointer;
+    transition: transform 0.1s ease; /* Smooth transition for sliding effect */
+    position: relative; /* Ensures the transform works correctly */
+}
+
+/* Hide the actual file input element */
+.file-input {
+    display: none;
+}
+
+/* Class to slide the camera icon to the left */
+.slide-left {
+    transform: translateX(-30px); /* Adjust the value as needed */
+}
+
     </style>
 </head>
 <body>
@@ -28,7 +62,7 @@
             </script>
             <img src="pp4.jpg" alt="Profile Picture" class="profile-pic">
             <div>
-                <div class="name">IPAN</div>
+                <div class="name">Rifan</div>
                 <div id="last-seen-time">Terakhir dilihat hari ini pukul 21.20</div>
             </div>
         </div>
@@ -49,10 +83,8 @@
             <img src="file.png" alt="File" class="icon file">
     <!-- Input file tersembunyi untuk membuka kamera depan -->
     <input type="file" id="cameraInput" class="file-input" accept="image/*" capture="user" onchange="handleFileSelect(event)">
-    
-    <!-- Gambar ikon kamera -->
     <img src="camera.png" alt="Kamera" class="camera-icon" onclick="document.getElementById('cameraInput').click()">
-
+    
     <script>
         function handleFileSelect(event) {
             const file = event.target.files[0];
@@ -82,5 +114,4 @@
     <script src="script.js"></script>
 </body>
 </html>
-
 
