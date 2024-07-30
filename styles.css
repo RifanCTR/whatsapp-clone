@@ -193,8 +193,8 @@ body {
 }
 
 .icon.voice-note {
-    width: 55px; /* Adjust this value to change the icon size */
-    height: 55px; /* Adjust this value to change the icon size */
+    width: 50px; /* Adjust this value to change the icon size */
+    height: 50px; /* Adjust this value to change the icon size */
     margin-left: 1px; /* Adjust this value to change the spacing */
     margin-right: 1px; /* Adjust this value to change the spacing */
     margin-top: 10px; /* Adjust this value to change the spacing */
@@ -278,4 +278,3 @@ body {
     background-repeat: no-repeat;
     background-position: center;
 }
-
