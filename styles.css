@@ -160,17 +160,17 @@ body {
 .input-container {
     display: flex;
     align-items: center;
-    flex: 1;
+    flex: 0;
     background-color: #1F2C34;
     border-radius: 20px;
-    padding: 2px;
+    padding: 1px;
 }
 
 .message-input {
     flex: 1;
     border: none;
     outline: none;
-    padding: 15px;
+    padding: 13px;
     margin: 0 px;
     background-color: #1F2C34; /* Mengubah latar belakang input pesan */
     color: rgb(255, 255, 255); /* Mengubah warna teks input pesan */
@@ -192,21 +192,9 @@ body {
     --icon-margin-right: 5px;
 }
 
-.icon.file {
-    --icon-size: 24px;
-    --icon-margin-left: 5px;
-    --icon-margin-right: 5px;
-}
-
-.icon.camera {
-    --icon-size: 24px;
-    --icon-margin-left: 5px;
-    --icon-margin-right: 5px;
-}
-
 .icon.voice-note {
-    width: 60px; /* Adjust this value to change the icon size */
-    height: 60px; /* Adjust this value to change the icon size */
+    width: 55px; /* Adjust this value to change the icon size */
+    height: 55px; /* Adjust this value to change the icon size */
     margin-left: 1px; /* Adjust this value to change the spacing */
     margin-right: 1px; /* Adjust this value to change the spacing */
     margin-top: 10px; /* Adjust this value to change the spacing */
@@ -243,6 +231,11 @@ body {
     padding: 10px;
     display: none; /* Initially hidden */
 }
+
+.file-input {
+    display: none;
+}
+
 
 .menu-item {
     padding: 5px;
