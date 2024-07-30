@@ -23,7 +23,7 @@
             color: rgb(255, 255, 255);
             border-radius: 21px;
         }
-        .camera-icon, .emoji-icon, .file-icon {
+        .camera-icon{
             width: 30px; /* Default size: 24px */
             height: 30px;
             cursor: pointer;
@@ -80,7 +80,40 @@
         <div class="input-container">
             <img src="emoji.png" alt="Emoji" class="icon emoji">
             <input type="text" class="message-input" placeholder="Type a message">
+            <input type="file" id="fileInput" class="file-input" accept="*/*" onchange="handleFileSelect(event)">
             <img src="file.png" alt="File" class="icon file">
+            <script>
+                function handleFileSelect(event) {
+                    const file = event.target.files[0];
+                    if (file) {
+                        const fileName = file.name;
+                        const messageInput = document.getElementById('messageInput');
+                        
+                        // Set nama file ke input pesan
+                        messageInput.value = `File Terpilih: ${fileName}`;
+        
+                        // Notifikasi jika file dipilih
+                        alert(`File "${fileName}" dipilih.`);
+                    }
+                }
+        
+                function sendMessage() {
+                    const messageInput = document.getElementById('messageInput');
+                    const messageText = messageInput.value.trim();
+                    if (messageText === '') return;
+                    
+                    // Tambahkan logika untuk mengirim pesan
+                    console.log('Pesan yang dikirim:', messageText);
+                    
+                    // Kosongkan input setelah mengirim
+                    messageInput.value = '';
+                }
+        
+                // Menambahkan event listener pada ikon untuk memicu klik pada input file
+                document.querySelector('.icon.file').addEventListener('click', () => {
+                    document.getElementById('fileInput').click();
+                });
+            </script>
     <!-- Input file tersembunyi untuk membuka kamera depan -->
     <input type="file" id="cameraInput" class="file-input" accept="image/*" capture="user" onchange="handleFileSelect(event)">
     <img src="camera.png" alt="Kamera" class="camera-icon" onclick="document.getElementById('cameraInput').click()">
