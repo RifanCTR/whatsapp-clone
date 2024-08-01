@@ -16,7 +16,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #302f2f; /* Dark gray background */
+    background-color: #2a2a2a; /* Dark gray background */
     color: white;
     padding: 5px;
 }
@@ -45,6 +45,12 @@ body {
     font-size: 1.2em;
 }
 
+#last-seen-time {
+    font-size: 0.7em;
+    color: #999;
+    margin-top: 2px;
+}
+
 .icons {
     display: flex;
     align-items: center;
@@ -60,7 +66,7 @@ body {
 /* Chat body style */
 .chat-body {
     padding: 20px;
-    background: url('bg6.jpg') no-repeat center center fixed;
+    background: url('bg.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 60px); /* Adjust this value based on header height */
     overflow-y: auto;
@@ -107,7 +113,7 @@ body {
 .chat-message.sent::after {
     content: '';
     position: absolute;
-    top: 32%;
+    top: 33%;
     right: -10px;
     transform: translateY(-50%);
     width: 0;
@@ -122,7 +128,7 @@ body {
 .chat-message.received::after {
     content: '';
     position: absolute;
-    top: 32%;
+    top: 33%;
     left: -10px;
     transform: translateY(-50%);
     width: 0;
@@ -153,28 +159,28 @@ body {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background: url('bg6.jpg') no-repeat center center fixed;
+    background: url('bg.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 
 .input-container {
     display: flex;
     align-items: center;
-    flex: 0;
+    flex: 1;
     background-color: #1F2C34;
     border-radius: 20px;
-    padding: 1px;
+    padding: 5opx;
 }
 
 .message-input {
     flex: 1;
     border: none;
     outline: none;
-    padding: 13px;
+    padding: 15px;
     margin: 0 px;
     background-color: #1F2C34; /* Mengubah latar belakang input pesan */
     color: rgb(255, 255, 255); /* Mengubah warna teks input pesan */
-    border-radius: 21px; /* Agar tetap konsisten dengan desain yang ada */
+    border-radius: 20px; /* Agar tetap konsisten dengan desain yang ada */
 }
 
 .icon {
@@ -192,13 +198,25 @@ body {
     --icon-margin-right: 5px;
 }
 
+.icon.file {
+    --icon-size: 24px;
+    --icon-margin-left: 5px;
+    --icon-margin-right: 5px;
+}
+
+.icon.camera {
+    --icon-size: 24px;
+    --icon-margin-left: 5px;
+    --icon-margin-right: 5px;
+}
+
 .icon.voice-note {
     width: 50px; /* Adjust this value to change the icon size */
     height: 50px; /* Adjust this value to change the icon size */
-    margin-left: 1px; /* Adjust this value to change the spacing */
-    margin-right: 1px; /* Adjust this value to change the spacing */
+    margin-left: 4px; /* Adjust this value to change the spacing */
+    margin-right: 15px; /* Adjust this value to change the spacing */
     margin-top: 10px; /* Adjust this value to change the spacing */
-    margin-bottom: 5px; /* Adjust this value to change the spacing */
+    margin-bottom: 10px; /* Adjust this value to change the spacing */
     position: relative; /* Allows for additional positioning if needed */
 }
 
@@ -232,11 +250,6 @@ body {
     display: none; /* Initially hidden */
 }
 
-.file-input {
-    display: none;
-}
-
-
 .menu-item {
     padding: 5px;
     cursor: pointer;
@@ -256,25 +269,3 @@ body {
     color: #c3c2c2;
 }
 
-#last-seen-time {
-    font-size: 0.7em;
-    color: #999;
-}
-.chat-me {
-    background-color: transparent;
-    padding: 0;
-    margin-bottom: 7px;
-    max-width: 100%; /* Ubah ini untuk memastikan gambar tidak melebihi kontainer */
-    overflow: hidden;
-    position: relative;
-}
-
-.description-img {
-    display: block;
-    width: 100%; /* Atur lebar gambar untuk mengikuti lebar kontainer */
-    height: auto; /* Menjaga rasio aspek gambar */
-    background-image: url('deskripsi.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
