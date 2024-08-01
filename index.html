@@ -5,64 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Chat Interface</title>
-    <style>
-.input-container {
-            display: flex;
-            align-items: center;
-            gap: px; /* Jarak antar elemen */
-            position: relative;
-        }
-        .message-input {
-            flex: 1; /* Mengisi ruang yang tersedia */
-            min-width: 100px; /* Lebar minimum */
-            max-width: 100%; /* Lebar maksimum */
-            border: none;
-            outline: none;
-            padding: 10px;
-            background-color: #1F2C34;
-            color: rgb(255, 255, 255);
-            border-radius: 21px;
-        }
-        .camera-icon{
-            width: 30px; /* Default size: 24px */
-            height: 30px;
-            cursor: pointer;
-            margin: 0 8px;
-            position: relative;
-}
-/* Camera icon styles */
-.camera-icon {
-    width: 30px; /* Adjust size as needed */
-    height: 30px;
-    cursor: pointer;
-    transition: transform 0.1s ease; /* Smooth transition for sliding effect */
-    position: relative; /* Ensures the transform works correctly */
-}
-
-/* Hide the actual file input element */
-.file-input {
-    display: none;
-}
-
-/* Class to slide the camera icon to the left */
-.slide-left {
-    transform: translateX(-30px); /* Adjust the value as needed */
-}
-
-    </style>
 </head>
 <body>
     <div class="chat-header">
         <div class="profile">
-            <img src="back.png" alt="Back" class="back-arrow" onclick="goBack()">
-            <script>
-                function goBack() {
-                    window.location.href = 'back.html'; // Redirect to back.html
-                }
-            </script>
-            <img src="pp4.jpg" alt="Profile Picture" class="profile-pic">
+            <img src="back.png" alt="Back" class="back-arrow">
+            <img src="pp.jpg" alt="Profile Picture" class="profile-pic">
             <div>
-                <div class="name">Rifan</div>
+                <div class="name">User</div>
                 <div id="last-seen-time">Terakhir dilihat hari ini pukul 21.20</div>
             </div>
         </div>
@@ -71,72 +21,17 @@
             <img src="t3.png" alt="Menu" class="icon t3">
         </div>
     </div>
-    <div class="chat-body">
-        <div class="chat-me">
-            <img src="deskripsi.png" alt="Deskripsi" class="description-img">
-        </div>
-    </div>
+    <div class="chat-body"></div>
     <div class="chat-footer">
         <div class="input-container">
-            <img src="emoji.png" alt="Emoji" class="icon emoji">
+            <img src="emoji.png" alt="Emoji" class="icon emoji" id="emoji-icon">
             <input type="text" class="message-input" placeholder="Type a message">
-            <input type="file" id="fileInput" class="file-input" accept="*/*" onchange="handleFileSelect(event)">
+            <input type="file" id="file-input" style="display: none;" />
             <img src="file.png" alt="File" class="icon file">
-            <script>
-                function handleFileSelect(event) {
-                    const file = event.target.files[0];
-                    if (file) {
-                        const fileName = file.name;
-                        const messageInput = document.getElementById('messageInput');
-                        
-                        // Set nama file ke input pesan
-                        messageInput.value = `File Terpilih: ${fileName}`;
-        
-                        // Notifikasi jika file dipilih
-                        alert(`File "${fileName}" dipilih.`);
-                    }
-                }
-        
-                function sendMessage() {
-                    const messageInput = document.getElementById('messageInput');
-                    const messageText = messageInput.value.trim();
-                    if (messageText === '') return;
-                    
-                    // Tambahkan logika untuk mengirim pesan
-                    console.log('Pesan yang dikirim:', messageText);
-                    
-                    // Kosongkan input setelah mengirim
-                    messageInput.value = '';
-                }
-        
-                // Menambahkan event listener pada ikon untuk memicu klik pada input file
-                document.querySelector('.icon.file').addEventListener('click', () => {
-                    document.getElementById('fileInput').click();
-                });
-            </script>
-    <!-- Input file tersembunyi untuk membuka kamera depan -->
-    <input type="file" id="cameraInput" class="file-input" accept="image/*" capture="user" onchange="handleFileSelect(event)">
-    <img src="camera.png" alt="Kamera" class="camera-icon" onclick="document.getElementById('cameraInput').click()">
-    
-    <script>
-        function handleFileSelect(event) {
-            const file = event.target.files[0];
-            if (file) {
-                // Proses gambar yang diambil
-                console.log('Gambar yang diambil:', file);
-                
-                // Kamu bisa menampilkan gambar atau mengunggahnya, misalnya:
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    // Tampilkan URL data gambar
-                    console.log('URL Data Gambar:', e.target.result);
-                };
-                reader.readAsDataURL(file);
-            }
-        }
-    </script>
+            <img src="camera.png" alt="Camera" class="icon camera">
         </div>
         <img src="vn.png" alt="Voice Note" class="icon voice-note send-button">
+        <div id="file-preview"></div> <!-- Preview area for selected file -->
     </div>
     <div class="menu" id="menu">
         <div class="menu-item" id="clear-chat">Hapus semua pesan</div>
@@ -147,4 +42,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
